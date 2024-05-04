@@ -1,5 +1,6 @@
 import Pages.BasePage;
 import Pages.LoginPage;
+import io.qameta.allure.*;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
@@ -25,6 +26,8 @@ public class LoginTests extends BasePage
         Assert.assertTrue(ActualResult.contains("https://www.saucedemo.com/inventory.html"));}
 
 //Login and use "Enter" button on the keyboard for validation.
+    @Epic("Implement Login functionality")
+    @Severity(SeverityLevel.CRITICAL)
     @Test
     public void loginKeyboard() {
         loginPage.enterUsername("standard_user");
@@ -35,18 +38,21 @@ public class LoginTests extends BasePage
         Assert.assertTrue(ActualResult.contains("https://www.saucedemo.com/inventory.html"));}
 
 //Login with invalid credentials and verify the presence of an error message.
+    @Story("Verify login with wrong username")
     @Test
     public void loginWrongUsername() {
         loginPage.enterUsername("wrong username");
         loginPage.enterPassword("secret_sauce");
         loginPage.clickLoginButton();
         loginPage.loginErrorMessageDisplayed();}
+    @Story("Verify login with wrong password")
     @Test
     public void loginWrongPassword() {
         loginPage.enterUsername("standard_user");
         loginPage.enterPassword("wrong password");
         loginPage.clickLoginButton();
         loginPage.loginErrorMessageDisplayed();}
+    @Story("Verify login with wrong username and password")
     @Test
     public void loginWrongBoth() {
         loginPage.enterUsername("wrong username");
