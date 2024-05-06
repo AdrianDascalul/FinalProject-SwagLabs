@@ -1,5 +1,5 @@
-import Pages.BasePage;
-import Pages.LoginPage;
+import pages.BasePage;
+import pages.LoginPage;
 import io.qameta.allure.*;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;

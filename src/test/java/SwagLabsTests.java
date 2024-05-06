@@ -1,6 +1,6 @@
-import Pages.BasePage;
-import Pages.SwagLabs;
-import Pages.LoginPage;
+import pages.BasePage;
+import pages.SwagLabs;
+import pages.LoginPage;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
